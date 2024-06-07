@@ -1,12 +1,12 @@
 const express = require("express");
-const cors = require("cors");
+const cors = require("cors");//allow the front end to communicate with the back end
 const app = express();
 const { Pool } = require("pg");
 const pool = require("./db");
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json());//parsing json data
 
 app.use("/health", (req, res) => {
   res.send({ msg: "Health is okay!" });
